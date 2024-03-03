@@ -38,7 +38,7 @@ jobs:
         run: |
           gcloud api-gateway api-configs create ${{ steps.vars.outputs.timestamp }} \
             --api=see-project-gateway --openapi-spec=api-config.yaml \
-            --project=${{ secrets.GCP_PROJECT_ID }} --backend-auth-service-account={secrets.SA_EMAIL}} \
+            --project=${{ secrets.GCP_PROJECT_ID }} --backend-auth-service-account=${{secrets.SA_EMAIL}} \
             --async
 
       - name: Update API Gateway
