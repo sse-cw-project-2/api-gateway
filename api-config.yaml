@@ -78,14 +78,14 @@ paths:
           description: Event info retrieved successfully
 
   /check_email_in_use:
-  post:
-    summary: Check an email is in use
-    operationId: checkEmailInUse
-    x-google-backend:
-      address: https://us-central1-still-descent-414311.cloudfunctions.net/api_check_email_in_use
-    responses:
-      '201':
-        description: Event deleted successfully
+    post:
+      summary: Check an email is in use
+      operationId: checkEmailInUse
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_check_email_in_use
+      responses:
+        '201':
+          description: Event deleted successfully
 
   /purchase_ticket:
     post:
