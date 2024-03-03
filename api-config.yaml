@@ -89,8 +89,8 @@ paths:
 
   /purchase_ticket:
     post:
-      summary: Check an email is in use
-      operationId: checkEmailInUse
+      summary: Purchase a ticket
+      operationId: purchaseTicket
       x-google-backend:
         address: https://us-central1-still-descent-414311.cloudfunctions.net/api_purchase_ticket
       responses:
