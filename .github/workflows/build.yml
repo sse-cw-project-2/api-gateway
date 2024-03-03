@@ -32,7 +32,7 @@ jobs:
   
       - name: Generate unique API config version
         id: vars
-        run: echo "::set-output name=timestamp::API-CONFIG-$(date +%Y%m%d%H%M%S)-$(uuidgen)"
+        run: echo "::set-output name=timestamp::api-config-$(date +%Y%m%d%H%M%S)-$(uuidgen)"
 
       - name: Deploy API Config
         run: |
