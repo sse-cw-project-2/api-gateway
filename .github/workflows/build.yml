@@ -43,6 +43,6 @@ jobs:
 
       - name: Update API Gateway
         run: |
-          gcloud api-gateway gateways update your-gateway-name \
+          gcloud api-gateway gateways update see-project-gateway \
             --api=sse-api-gateway --api-config=${{ steps.vars.outputs.timestamp }} \
             --location=us-central1 --project=${{ secrets.GCP_PROJECT_ID }}
