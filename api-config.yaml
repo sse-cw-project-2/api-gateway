@@ -98,13 +98,14 @@ paths:
           description: Ticket purchased successfully
 
   /get_tickets_info:
-    get:
-      summary: Get tickets info
-      operationId: getTicketInfo
-      x-google-backend:
-        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_tickets_info
-        '201':
-          description: Tickets info retrieved successfully
+      get:
+        summary: Get tickets info
+        operationId: getTicketInfo
+        x-google-backend:
+          address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_tickets_info
+        responses:
+          '201':
+            description: Tickets info retrieved successfully
   
   /get_tickets_info_for_users:
     get:
@@ -112,6 +113,7 @@ paths:
       operationId: getTicketInfoForUsers
       x-google-backend:
         address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_tickets_info_for_users
+      responses:
         '201':
           description: Tickets info for user retrieved successfully
 
