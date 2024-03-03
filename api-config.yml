@@ -1,0 +1,159 @@
+swagger: '2.0'
+info:
+ title: Event Management API
+ description: API to manage event tickets and accounts
+ version: '1.0'
+host: sse-project-gateway.us-central1.gateway.dev
+schemes:
+ - https
+paths:
+  /create_account:
+    post:
+      summary: Create a new account
+      operationId: createAccount
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_create_account
+      responses:
+        '201':
+          description: Account created successfully
+
+  /delete_account:
+    post:
+      summary: Delete an account
+      operationId: deleteAccount
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_delete_account
+      responses:
+        '201':
+          description: Account deleted successfully
+  
+  /update_account:
+    post:
+      summary: Update an account
+      operationId: updateAccount
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_update_account
+      responses:
+        '201':
+          description: Account updated successfully
+  
+  /get_account_info:
+    get:
+      summary: Get account info
+      operationId: getAccountInfo
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_account_info
+      responses:
+        '201':
+          description: Account info retrieved successfully
+   
+  /create_event:
+    post:
+      summary: Create a new event
+      operationId: createEvent
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_create_event
+      responses:
+        '201':
+          description: Event created successfully
+
+  /delete_event:
+    post:
+      summary: Delete an event
+      operationId: deleteEvent
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_delete_event
+      responses:
+        '201':
+          description: Event deleted successfully
+    
+  /get_event_info:
+    get:
+      summary: Get event info
+      operationId: getEventInfo
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_event_info
+      responses:
+        '201':
+          description: Event info retrieved successfully
+
+  /check_email_in_use:
+  post:
+    summary: Check an email is in use
+    operationId: checkEmailInUse
+    x-google-backend:
+      address: https://us-central1-still-descent-414311.cloudfunctions.net/api_check_email_in_use
+    responses:
+      '201':
+        description: Event deleted successfully
+
+  /purchase_ticket:
+    post:
+      summary: Check an email is in use
+      operationId: checkEmailInUse
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_purchase_ticket
+      responses:
+        '201':
+          description: Ticket purchased successfully
+
+  /get_tickets_info:
+    get:
+      summary: Get tickets info
+      operationId: getTicketInfo
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_tickets_info
+        '201':
+          description: Tickets info retrieved successfully
+  
+  /get_tickets_info_for_users:
+    get:
+      summary: Get tickets info for users
+      operationId: getTicketInfoForUsers
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_tickets_info_for_users
+        '201':
+          description: Tickets info for user retrieved successfully
+
+  /assign_tickets_to_attendee:
+    post:
+      summary: Assigns tickets to attendee
+      operationId: assignTicketsToAttendee
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_assign_tickets_to_attendee
+      responses:
+        '201':
+          description: ticket assigned successful 
+
+  /delete_expired_tickets:
+    post:
+      summary: Delete expired tickets
+      operationId: deleteExpiredTickets
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_delete_expired_tickets
+      responses:
+        '201':
+          description: Deleted expired tickets successfully
+  
+  /update_tickets_redeemed_status:
+    post:
+      summary: Update tickets redeemed status
+      operationId: updateTicketsRedeemedStatus
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_update_tickets_redeemed_status
+      responses:
+        '201':
+          description: Update tickets redeemed status successfully
+
+securityDefinitions:
+ your_custom_auth_id:
+   authorizationUrl: ""
+   flow: "implicit"
+   type: "oauth2"
+   # The value below should be unique
+   x-google-issuer: "https://accounts.google.com"
+   x-google-jwks_uri: "https://www.googleapis.com/oauth2/v1/certs"
+   x-google-audiences: "https://see-project-gateway-c4vspufr.uc.gateway.dev"
+
+security:
+- your_custom_auth_id: []
