@@ -1,0 +1,38 @@
+name: Update API Gateway Config
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+      
+      - name: Install UUID tool
+        run: sudo apt-get install uuid-runtime
+  
+      - name: Generate unique API config version
+        id: vars
+        run: echo "::set-output name=timestamp::$(date +%Y%m%d%H%M%S)-$(uuidgen)"
+
+      - name: Deploy API Config
+        run: |
+          gcloud api-gateway api-configs create ${{ steps.vars.outputs.timestamp }} \
+            --api=see-project-gateway --openapi-spec=api-config.yaml \
+            --project=${{ secrets.GCP_PROJECT_ID }} --backend-auth-service-account={secrets.EMAIL}} \
+            --async
+
+      - name: Update API Gateway
+        run: |
+          gcloud api-gateway gateways update your-gateway-name \
+            --api=sse-api-gateway --api-config=${{ steps.vars.outputs.timestamp }} \
+            --location=us-central1 --project=${{ secrets.GCP_PROJECT_ID }}
