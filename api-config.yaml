@@ -77,6 +77,36 @@ paths:
         '201':
           description: Event info retrieved successfully
 
+  /get_events_for_attendee:
+    get:
+      summary: Get events for attendee
+      operationId: getEventsForAttendee
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_events_for_attendee
+      responses:
+        '201':
+          description: Events retrieved successfully
+
+  /get_events_for_artist:
+    get:
+      summary: Get events for artist
+      operationId: getEventsForArtist
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_events_for_artist
+      responses:
+        '201':
+          description: Events retrieved successfully
+
+  /get_events_for_venue:
+    get:
+      summary: Get events for venue
+      operationId: getEventsForVenue
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_events_for_venue
+      responses:
+        '201':
+          description: Events retrieved successfully
+
   /check_email_in_use:
     post:
       summary: Check an email is in use
