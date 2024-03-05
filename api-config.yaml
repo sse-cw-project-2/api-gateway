@@ -173,20 +173,20 @@ paths:
       operationId: getEventsInCity
       parameters:
         - in: query
-          name: function
+          name: identifier
           type: string
           required: true
-          description: The function to apply to the retrieved data.
+          description: The name of the city to retrieve events from.
         - in: query
           name: object_type
           type: string
           required: true
           description: The type of object being queried.
         - in: query
-          name: identifier
+          name: function
           type: string
           required: true
-          description: The name of the city to retrieve events from.
+          description: The function to apply to the retrieved data.
       responses:
         201:
           description: Cities retrieved successfully
