@@ -121,13 +121,13 @@ paths:
         description: The name of the country to retrieve cities from.
       - in: query
         name: object_type
-        required: true  # Assuming this parameter is optional
+        required: true
         schema:
           type: string
         description: The type of object being queried.
       - in: query
         name: function
-        required: true  # Assuming this parameter is optional
+        required: true
         schema:
           type: string
         description: The function to apply to the retrieved data.
