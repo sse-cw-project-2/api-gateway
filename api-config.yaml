@@ -131,12 +131,10 @@ paths:
       responses:
         '200':
           description: Cities retrieved successfully
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
+            schema:
+              type: array
+              items:
+                type: string
       x-google-backend:
         address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_cities_by_country
 
