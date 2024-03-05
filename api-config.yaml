@@ -38,7 +38,7 @@ paths:
           description: Account updated successfully
   
   /get_account_info:
-    get:
+    post:
       summary: Get account info
       operationId: getAccountInfo
       x-google-backend:
@@ -68,7 +68,7 @@ paths:
           description: Event deleted successfully
     
   /get_event_info:
-    get:
+    post:
       summary: Get event info
       operationId: getEventInfo
       x-google-backend:
@@ -78,7 +78,7 @@ paths:
           description: Event info retrieved successfully
 
   /get_events_for_attendee:
-    get:
+    post:
       summary: Get events for attendee
       operationId: getEventsForAttendee
       parameters:
@@ -104,7 +104,7 @@ paths:
           description: Events retrieved successfully
 
   /get_events_for_artist:
-    get:
+    post:
       summary: Get events for artist
       operationId: getEventsForArtist
       parameters:
@@ -130,7 +130,7 @@ paths:
           description: Events retrieved successfully
 
   /get_events_for_venue:
-    get:
+    post:
       summary: Get events for venue
       operationId: getEventsForVenue
       x-google-backend:
@@ -199,7 +199,7 @@ paths:
           description: Ticket purchased successfully
 
   /get_tickets_info:
-      get:
+      post:
         summary: Get tickets info
         operationId: getTicketInfo
         x-google-backend:
@@ -209,7 +209,7 @@ paths:
             description: Tickets info retrieved successfully
   
   /get_tickets_info_for_users:
-    get:
+    post:
       summary: Get tickets info for users
       operationId: getTicketInfoForUsers
       x-google-backend:
