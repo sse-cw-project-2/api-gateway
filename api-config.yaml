@@ -108,7 +108,7 @@ paths:
           description: Events retrieved successfully
 
 
-  /get_cities_by_country:
+/get_cities_by_country:
     get:
       summary: Get cities by country
       operationId: getCitiesByCountry
@@ -131,10 +131,10 @@ paths:
       responses:
         '200':
           description: Cities retrieved successfully
-            schema:
-              type: array
-              items:
-                type: string
+          schema:
+            type: array
+            items:
+              type: string
       x-google-backend:
         address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_cities_by_country
 
