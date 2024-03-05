@@ -166,26 +166,27 @@ paths:
       x-google-backend:
         address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_cities_by_country
 
+
   /get_events_in_city:
     get:
       summary: Get events in city
       operationId: getEventsInCity
       parameters:
         - in: query
-          name: identifier
+          name: function
           type: string
           required: true
-          description: The name of the city to retrieve events from.
+          description: The function to apply to the retrieved data.
         - in: query
           name: object_type
           type: string
           required: true
           description: The type of object being queried.
         - in: query
-          name: function
+          name: identifier
           type: string
           required: true
-          description: The function to apply to the retrieved data.
+          description: The name of the city to retrieve events from.
       responses:
         201:
           description: Cities retrieved successfully
