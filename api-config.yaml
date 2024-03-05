@@ -108,32 +108,35 @@ paths:
           description: Events retrieved successfully
 
 
-/get_cities_by_country:
-  get:
-    summary: Get cities by country
-    operationId: getCitiesByCountry
-    parameters:
-      - in: query
-        name: country
-        required: true
-        type: string
-        description: The name of the country to retrieve cities from.
-      - in: query
-        name: object_type
-        required: true
-        type: string
-        description: The type of object being queried.
-      - in: query
-        name: function
-        required: true
-        type: string
-        description: The function to apply to the retrieved data.
-    x-google-backend:
-      address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_cities_by_country
-    responses:
-      '201':
-        description: Cities retrieved successfully
-
+  /get_cities_by_country:
+    get:
+      summary: Get cities by country
+      operationId: getCitiesByCountry
+      parameters:
+        - in: query
+          name: country
+          schema:
+            type: string
+          required: true
+          description: The name of the country to retrieve cities from.
+        - in: query
+          name: object_type
+          schema:
+            type: string
+          required: true
+          description: The type of object being queried.
+        - in: query
+          name: function
+          schema:
+            type: string
+          required: true
+          description: The function to apply to the retrieved data.
+      responses:
+        201:
+          description: Cities retrieved successfully
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_cities_by_country
+      
   /check_email_in_use:
     post:
       summary: Check an email is in use
