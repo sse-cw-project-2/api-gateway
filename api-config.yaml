@@ -191,7 +191,7 @@ paths:
         201:
           description: Cities retrieved successfully
       x-google-backend:
-        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_cities_by_country
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_events_in_city
 
       
   /check_email_in_use:
