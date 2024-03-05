@@ -161,40 +161,24 @@ paths:
           required: true
           description: The function to apply to the retrieved data.
       responses:
-        201:
+        '201':
           description: Cities retrieved successfully
       x-google-backend:
         address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_cities_by_country
 
 
   /get_events_in_city:
-    get:
+    post:
       summary: Get events in city
       operationId: getEventsInCity
-      parameters:
-        - in: query
-          name: identifier
-          type: string
-          required: true
-          description: The name of the city to retrieve events from.
-        - in: query
-          name: object_type
-          type: string
-          required: true
-          description: The type of object being queried.
-        - in: query
-          name: function
-          type: string
-          required: true
-          description: The function to apply to the retrieved data.
       responses:
-        201:
-          description: Cities retrieved successfully
+        '201':
+          description: Events retrieved successfully
       x-google-backend:
         address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_events_in_city
 
       
-  /check_email_in_use:
+  /check_email_in_use: 
     post:
       summary: Check an email is in use
       operationId: checkEmailInUse
