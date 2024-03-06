@@ -202,6 +202,17 @@ paths:
         '201':
           description: Tickets info for user retrieved successfully
 
+  /reserve_tickets:
+    post:
+      summary: Reserve tickets
+      operationId: reserveTickets
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_reserve_tickets
+      responses:
+        '201':
+          description: Tickets reserved successfully
+
+
   /assign_tickets_to_attendee:
     post:
       summary: Assigns tickets to attendee
