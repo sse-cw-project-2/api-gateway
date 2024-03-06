@@ -172,12 +172,12 @@ paths:
         '201':
           description: Event deleted successfully
 
-  /purchase_ticket:
+  /purchase_tickets:
     post:
       summary: Purchase a ticket
       operationId: purchaseTicket
       x-google-backend:
-        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_purchase_ticket
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_purchase_tickets
       responses:
         '201':
           description: Ticket purchased successfully
