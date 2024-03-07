@@ -166,7 +166,6 @@ paths:
       x-google-backend:
         address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_cities_by_country
 
-
   /get_events_in_city:
     post:
       summary: Get events in city
@@ -177,7 +176,6 @@ paths:
       x-google-backend:
         address: https://us-central1-still-descent-414311.cloudfunctions.net/api_get_events_in_city
 
-      
   /check_email_in_use: 
     post:
       summary: Check an email is in use
@@ -247,6 +245,18 @@ paths:
       responses:
         '201':
           description: Update tickets redeemed status successfully
+
+
+  /create_tickets:
+    post:
+      summary: Create tickets
+      operationId: createTickets
+      x-google-backend:
+        address: https://us-central1-still-descent-414311.cloudfunctions.net/api_create_tickets
+      responses:
+        '201':
+          description: Created tickets successfully
+
 
 securityDefinitions:
  your_custom_auth_id:
